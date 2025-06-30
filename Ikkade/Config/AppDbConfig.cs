@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ikkade.model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Ikkade.model;
+
+
 
 namespace Ikkade.Config
 {
@@ -15,13 +11,11 @@ namespace Ikkade.Config
         public DbSet<model.Biller> Biller { get; set; }
         public DbSet<model.Orders> Orders { get; set; }
         public DbSet<model.Items> Items { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Use your actual database connection string here
-            optionsBuilder.UseMySql(
-           "server=localhost;database=Ikkade;user=root;password=root;",
-           new MySqlServerVersion(new Version(8, 0, 37)) // replace with your MySQL version
-       );
+            // ✅ Use your actual SQL Server connection string here
+            optionsBuilder.UseSqlServer("Data Source=CHANDRASEKHARRE\\SQLEXPRESS;Database=Ikkade;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
