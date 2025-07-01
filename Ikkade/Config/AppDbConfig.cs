@@ -15,7 +15,7 @@ namespace Ikkade.Config
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // ✅ Use your actual SQL Server connection string here
-            optionsBuilder.UseSqlServer("Data Source=CHANDRASEKHARRE\\SQLEXPRESS;Database=Ikkade;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=SOLNB-CGX9F94\\SQLEXPRESS;Database=Ikkade;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
